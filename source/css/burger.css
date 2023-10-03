@@ -1,0 +1,78 @@
+@media (max-width: 972px) {
+    /*burger*/
+
+    .header-burger {
+        display: block;
+        position: relative;
+        width: 30px;
+        height: 20px;
+        z-index: 120;
+    }
+
+    .header-burger span {
+        position: absolute;
+        background-color: #000;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        top: 9px;
+        z-index: 120;
+        transition: all 0.3s ease 0s;
+    }
+
+    .header-burger:before,
+    .header-burger:after {
+        content: "";
+        background-color: #000;
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        left: 0;
+        transition: all 0.3s ease 0s;
+    }
+
+    .header-burger:before {
+        top: 0;
+        z-index: 3;
+    }
+
+    .header-burger:after {
+        bottom: 0;
+        z-index: 120;
+    }
+
+    /*======animation burger*/
+
+    .header-burger.active:before {
+        background-color: black;
+        transform: rotate(44deg);
+        top: 9px;
+    }
+
+    .header-burger.active span {
+        background-color: black;
+        transform: scale(0);
+    }
+
+    .header-burger.active:after {
+        background-color: black;
+        transform: rotate(-44deg);
+        bottom: 9px;
+    }
+
+    /*hide*/
+
+    .header-burger.hide:before {
+        transform: rotate(0deg);
+        top: 0px;
+    }
+
+    .header-burger.hide span {
+        transform: scale(1);
+    }
+
+    .header-burger.hide:after {
+        transform: rotate(0deg);
+        bottom: 0px;
+    }
+}
